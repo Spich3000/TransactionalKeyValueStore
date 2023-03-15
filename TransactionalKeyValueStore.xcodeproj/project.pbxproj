@@ -8,18 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		A23E3D1529BD403700407CDC /* TransactionalKeyValueStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23E3D1429BD403700407CDC /* TransactionalKeyValueStoreApp.swift */; };
-		A23E3D1729BD403700407CDC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23E3D1629BD403700407CDC /* ContentView.swift */; };
 		A23E3D1929BD403800407CDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A23E3D1829BD403800407CDC /* Assets.xcassets */; };
 		A23E3D1D29BD403800407CDC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A23E3D1C29BD403800407CDC /* Preview Assets.xcassets */; };
+		A23E3D2629BD4CDE00407CDC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23E3D2529BD4CDE00407CDC /* ContentView.swift */; };
+		A2F5E8D729C1FB8800F6AC1A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F5E8D629C1FB8800F6AC1A /* ViewModel.swift */; };
+		A2F5E8D929C1FBE600F6AC1A /* ButtonView .swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F5E8D829C1FBE600F6AC1A /* ButtonView .swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A23E3D1129BD403600407CDC /* TransactionalKeyValueStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransactionalKeyValueStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A23E3D1429BD403700407CDC /* TransactionalKeyValueStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionalKeyValueStoreApp.swift; sourceTree = "<group>"; };
-		A23E3D1629BD403700407CDC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A23E3D1829BD403800407CDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A23E3D1A29BD403800407CDC /* TransactionalKeyValueStore.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TransactionalKeyValueStore.entitlements; sourceTree = "<group>"; };
 		A23E3D1C29BD403800407CDC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A23E3D2529BD4CDE00407CDC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A2F5E8D629C1FB8800F6AC1A /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		A2F5E8D829C1FBE600F6AC1A /* ButtonView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ButtonView .swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +57,9 @@
 			isa = PBXGroup;
 			children = (
 				A23E3D1429BD403700407CDC /* TransactionalKeyValueStoreApp.swift */,
-				A23E3D1629BD403700407CDC /* ContentView.swift */,
+				A23E3D2529BD4CDE00407CDC /* ContentView.swift */,
+				A2F5E8D829C1FBE600F6AC1A /* ButtonView .swift */,
+				A2F5E8D629C1FB8800F6AC1A /* ViewModel.swift */,
 				A23E3D1829BD403800407CDC /* Assets.xcassets */,
 				A23E3D1A29BD403800407CDC /* TransactionalKeyValueStore.entitlements */,
 				A23E3D1B29BD403800407CDC /* Preview Content */,
@@ -139,8 +145,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A23E3D1729BD403700407CDC /* ContentView.swift in Sources */,
 				A23E3D1529BD403700407CDC /* TransactionalKeyValueStoreApp.swift in Sources */,
+				A2F5E8D729C1FB8800F6AC1A /* ViewModel.swift in Sources */,
+				A23E3D2629BD4CDE00407CDC /* ContentView.swift in Sources */,
+				A2F5E8D929C1FBE600F6AC1A /* ButtonView .swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +287,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
@@ -287,7 +295,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = spich.co.TransactionalKeyValueStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -317,7 +327,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
@@ -325,7 +335,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = spich.co.TransactionalKeyValueStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
