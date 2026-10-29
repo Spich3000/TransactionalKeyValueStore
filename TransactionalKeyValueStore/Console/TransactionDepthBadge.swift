@@ -6,15 +6,16 @@ struct TransactionDepthBadge: View {
 
     var body: some View {
         if depth > 0 {
-            Label {
+            // Not a Label: toolbars render labels icon-only regardless of label style.
+            HStack(spacing: 4) {
+                Image(systemName: "arrow.triangle.branch")
                 Text(depth, format: .number)
                     .monospacedDigit()
-            } icon: {
-                Image(systemName: "arrow.triangle.branch")
             }
             .font(.footnote.weight(.semibold))
             .padding(.horizontal, 10)
             .padding(.vertical, 4)
+            .fixedSize()
             .foregroundStyle(.orange)
             .background(.orange.opacity(0.15), in: .capsule)
             .accessibilityLabel(Text("Open transactions: \(depth)"))

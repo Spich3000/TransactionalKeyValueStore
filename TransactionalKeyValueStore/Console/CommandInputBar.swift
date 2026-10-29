@@ -27,12 +27,20 @@ struct CommandInputBar: View {
             HStack(spacing: 8) {
                 Text(">")
                     .foregroundStyle(.secondary)
-                TextField("Command", text: $text, prompt: Text("SET key value"))
+                // A single-line field resigns first responder on Return, which hides
+                // the keyboard after every command. A vertical field keeps focus, so
+                // Return is handled here by stripping the newline and submitting.
+                TextField("Command", text: $text, prompt: Text("SET key value"), axis: .vertical)
+                    .lineLimit(1...4)
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
                     .submitLabel(.send)
                     .focused(isFocused)
-                    .onSubmit(onSubmit)
+                    .onChange(of: text) { _, newValue in
+                        guard newValue.contains(where: \.isNewline) else { return }
+                        text = newValue.filter { !$0.isNewline }
+                        onSubmit()
+                    }
                 Button("Run", systemImage: "arrow.up.circle.fill", action: onSubmit)
                     .labelStyle(.iconOnly)
                     .font(.title2)

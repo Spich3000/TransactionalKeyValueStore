@@ -32,7 +32,7 @@ struct ConsoleView: View {
                     titleVisibility: .visible,
                     presenting: session.pendingCommand
                 ) { pending in
-                    Button(confirmationAction(for: pending.command), role: .destructive) {
+                    Button(confirmationAction(for: pending.command), role: confirmationRole(for: pending.command)) {
                         session.confirmPendingCommand()
                     }
                     Button("Cancel", role: .cancel) {
@@ -127,6 +127,11 @@ struct ConsoleView: View {
         case .rollback: "Roll Back"
         default: "Run"
         }
+    }
+
+    /// Committing keeps data, so only commands that discard it are styled as destructive.
+    private func confirmationRole(for command: Command) -> ButtonRole? {
+        command == .commit ? nil : .destructive
     }
 }
 
