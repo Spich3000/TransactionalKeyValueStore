@@ -1,0 +1,12 @@
+# Xcode
+xcuserdata/
+DerivedData/
+*.xcresult
+build/
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+
+.DS_Store
